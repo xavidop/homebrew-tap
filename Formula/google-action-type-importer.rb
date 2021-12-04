@@ -5,20 +5,20 @@
 class GoogleActionTypeImporter < Formula
   desc "Google action CLI utility for create Google Actions from CSV files"
   homepage "https://github.com/xavidop/google-action-type-importer"
-  version "1.0.1"
+  version "1.0.2"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/xavidop/google-action-type-importer/releases/download/v1.0.1/darwin_arm64_v1.0.1.tar.gz"
-      sha256 "3a0ba3daefdfea9dac0b0ca43a8ee817559ae574ba9bd2da046df4590d4670f7"
+      url "https://github.com/xavidop/google-action-type-importer/releases/download/v1.0.2/darwin_arm64_v1.0.2.tar.gz"
+      sha256 "612c544a0dd33b9a8c6e212a4907f65384ce5c1406dba730c4c1dc277c7d91d7"
 
       def install
         bin.install "google-action-type-importer"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/xavidop/google-action-type-importer/releases/download/v1.0.1/darwin_amd64_v1.0.1.tar.gz"
-      sha256 "c214f5e8b6d7b41950731dc1df21e9699e03ee2cdd4b768fd9f94896b82dba03"
+      url "https://github.com/xavidop/google-action-type-importer/releases/download/v1.0.2/darwin_amd64_v1.0.2.tar.gz"
+      sha256 "610cdec2d2515aa8c69d69020ff5413f31c740dd1ce8b981776ebfc8d46f5fe1"
 
       def install
         bin.install "google-action-type-importer"
@@ -27,17 +27,17 @@ class GoogleActionTypeImporter < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/xavidop/google-action-type-importer/releases/download/v1.0.1/linux_arm64_v1.0.1.tar.gz"
-      sha256 "a6af60273074e4debb71eaef18e099c1445b646d134492f5924a65c8b6ed3ebe"
+    if Hardware::CPU.intel?
+      url "https://github.com/xavidop/google-action-type-importer/releases/download/v1.0.2/linux_amd64_v1.0.2.tar.gz"
+      sha256 "dace5746553b258675303386bcc9557d5a2f8d3546218d8e9f022e5772833c32"
 
       def install
         bin.install "google-action-type-importer"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/xavidop/google-action-type-importer/releases/download/v1.0.1/linux_amd64_v1.0.1.tar.gz"
-      sha256 "c4444f5a15a3609cb11aec36ea8bf67cc80a66b60742c8a3e5d5a187bd2e4c5f"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/xavidop/google-action-type-importer/releases/download/v1.0.2/linux_arm64_v1.0.2.tar.gz"
+      sha256 "39b0a491e7f5b2c71ba77fa66a9e90f9b5153385f31d8026dab7aef7e23d99d4"
 
       def install
         bin.install "google-action-type-importer"
