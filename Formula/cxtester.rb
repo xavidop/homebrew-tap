@@ -5,20 +5,20 @@
 class Cxtester < Formula
   desc "Google action CLI utility for create Google Actions from CSV files"
   homepage "https://github.com/xavidop/dialogflow-cx-test-runner"
-  version "1.2.1"
+  version "1.3.0"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/xavidop/dialogflow-cx-test-runner/releases/download/v1.2.1/darwin_arm64_v1.2.1.tar.gz"
-      sha256 "778bb7d11900cda75fffab29f7124feed48ce0bb3fde5ade7c6b94884d3efc65"
+    if Hardware::CPU.intel?
+      url "https://github.com/xavidop/dialogflow-cx-test-runner/releases/download/v1.3.0/darwin_amd64_v1.3.0.tar.gz"
+      sha256 "9cde62ce14f803b83eccaca5dce13475aa02a5e1cc96a81ba1552a5a94aafeb2"
 
       def install
         bin.install "cxtester"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/xavidop/dialogflow-cx-test-runner/releases/download/v1.2.1/darwin_amd64_v1.2.1.tar.gz"
-      sha256 "889456c24e5713ca9d0031e69178f6a3debc4ec27ddd0577d14f9311551b4d2f"
+    if Hardware::CPU.arm?
+      url "https://github.com/xavidop/dialogflow-cx-test-runner/releases/download/v1.3.0/darwin_arm64_v1.3.0.tar.gz"
+      sha256 "88e42f36d4086730876a134dd9b85628edd36f2d4b41e7b9c89a8244897b56a1"
 
       def install
         bin.install "cxtester"
@@ -27,17 +27,17 @@ class Cxtester < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/xavidop/dialogflow-cx-test-runner/releases/download/v1.2.1/linux_amd64_v1.2.1.tar.gz"
-      sha256 "b315a3285d65e5ee26eb267205a221600ce3c713cf3e952ade02f5c40314e7f6"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/xavidop/dialogflow-cx-test-runner/releases/download/v1.3.0/linux_arm64_v1.3.0.tar.gz"
+      sha256 "6210ffae58c6e5ba61b05c974387db1502b5918051dd8a7f0d221a8ec65a2be2"
 
       def install
         bin.install "cxtester"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/xavidop/dialogflow-cx-test-runner/releases/download/v1.2.1/linux_arm64_v1.2.1.tar.gz"
-      sha256 "94ce9dd20be4a02e11eda96b117bd872dc16cf0403f9df3c973c7a8f6c57d275"
+    if Hardware::CPU.intel?
+      url "https://github.com/xavidop/dialogflow-cx-test-runner/releases/download/v1.3.0/linux_amd64_v1.3.0.tar.gz"
+      sha256 "e1c4ccd4c496f83fb860b7ee58bbf42355d69a47df3c1dd13ba9f42270d94aac"
 
       def install
         bin.install "cxtester"
