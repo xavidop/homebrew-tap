@@ -5,20 +5,20 @@
 class Cxcli < Formula
   desc "The missing CLI for your Dialogflow CX projects"
   homepage "https://github.com/xavidop/dialogflow-cx-cli"
-  version "1.6.0"
+  version "1.6.1"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/xavidop/dialogflow-cx-cli/releases/download/v1.6.0/darwin_arm64_v1.6.0.tar.gz"
-      sha256 "5fccf3ade72afee99a1cf06cec5bfefe9f1e863783acc6bfb807a4e23bfa3a90"
+      url "https://github.com/xavidop/dialogflow-cx-cli/releases/download/v1.6.1/darwin_arm64_v1.6.1.tar.gz"
+      sha256 "21a2a4cb91be908e12f5c18dba6e111dd7d90f90d6768a3b590309bfe371911e"
 
       def install
         bin.install "cxcli"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/xavidop/dialogflow-cx-cli/releases/download/v1.6.0/darwin_amd64_v1.6.0.tar.gz"
-      sha256 "d2aad1e20450a688e398ca5de6cec84dbc89d8a1a7c30a0d7099428d7e919e45"
+      url "https://github.com/xavidop/dialogflow-cx-cli/releases/download/v1.6.1/darwin_amd64_v1.6.1.tar.gz"
+      sha256 "c102bb5345942fedd8718712f48110b682624c5e3a06d4342711102163170f06"
 
       def install
         bin.install "cxcli"
@@ -28,16 +28,16 @@ class Cxcli < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/xavidop/dialogflow-cx-cli/releases/download/v1.6.0/linux_amd64_v1.6.0.tar.gz"
-      sha256 "feeb7f66c7cd95c18c55fa55ea9d182154a55172da9b24155f1fd80b1484cf67"
+      url "https://github.com/xavidop/dialogflow-cx-cli/releases/download/v1.6.1/linux_amd64_v1.6.1.tar.gz"
+      sha256 "c430cef9e22b907c978b66f9ee72a38833b9709c7b531a569f5c4a9f67e1dae9"
 
       def install
         bin.install "cxcli"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/xavidop/dialogflow-cx-cli/releases/download/v1.6.0/linux_arm64_v1.6.0.tar.gz"
-      sha256 "f7eecec5a8fc99bc75fe6e73fe77358dc2887463dc1290b5a206380806cfc8b0"
+      url "https://github.com/xavidop/dialogflow-cx-cli/releases/download/v1.6.1/linux_arm64_v1.6.1.tar.gz"
+      sha256 "62d080336c28f7e934c84cbd1f74de2e6eaf01a3a6452bff66bc59c3eb725557"
 
       def install
         bin.install "cxcli"
