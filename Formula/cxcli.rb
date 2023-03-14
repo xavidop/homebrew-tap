@@ -5,12 +5,12 @@
 class Cxcli < Formula
   desc "The missing CLI for your Dialogflow CX projects"
   homepage "https://cxcli.xavidop.me"
-  version "1.30.0"
+  version "1.31.0"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/xavidop/dialogflow-cx-cli/releases/download/v1.30.0/cxcli_Darwin_x86_64.tar.gz"
-      sha256 "1e9c7e1184d2a4f8b19b51f03fcd65b1a849f6fdee4532050ff7f344bc049eda"
+    if Hardware::CPU.arm?
+      url "https://github.com/xavidop/dialogflow-cx-cli/releases/download/v1.31.0/cxcli_Darwin_arm64.tar.gz"
+      sha256 "b64b72b866015967d2ac14c03475ef923bb951398f40d9535f3c7ccb70d68c62"
 
       def install
         bin.install "cxcli"
@@ -20,9 +20,9 @@ class Cxcli < Formula
         man1.install "manpages/cxcli.1.gz"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/xavidop/dialogflow-cx-cli/releases/download/v1.30.0/cxcli_Darwin_arm64.tar.gz"
-      sha256 "288f30e483d014ca2c6c9d42d159fcf3367f57ddc50b5c0ea3cb75b365cd31ab"
+    if Hardware::CPU.intel?
+      url "https://github.com/xavidop/dialogflow-cx-cli/releases/download/v1.31.0/cxcli_Darwin_x86_64.tar.gz"
+      sha256 "b264ebb3c67f882a91eae18c2302e5206b13aae94c6b7bbabf9e2ddd873f7f4f"
 
       def install
         bin.install "cxcli"
@@ -36,20 +36,8 @@ class Cxcli < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/xavidop/dialogflow-cx-cli/releases/download/v1.30.0/cxcli_Linux_arm64.tar.gz"
-      sha256 "3599a9413b365016471f8506a7be6081596dfab90f5e82317b3ea2b9a433a8c8"
-
-      def install
-        bin.install "cxcli"
-        bash_completion.install "completions/cxcli.bash" => "cxcli"
-        zsh_completion.install "completions/cxcli.zsh" => "_cxcli"
-        fish_completion.install "completions/cxcli.fish"
-        man1.install "manpages/cxcli.1.gz"
-      end
-    end
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/xavidop/dialogflow-cx-cli/releases/download/v1.30.0/cxcli_Linux_armv7.tar.gz"
-      sha256 "5b4ba5b61de06b9fa2a70d4032e9943a3ee894d1d8c5a7ae18f07208d8bd9d7d"
+      url "https://github.com/xavidop/dialogflow-cx-cli/releases/download/v1.31.0/cxcli_Linux_arm64.tar.gz"
+      sha256 "5169d11003ec9abbccbaf9221c78a83ba5e4bb65c43f5e0eb22e681d73e651ea"
 
       def install
         bin.install "cxcli"
@@ -60,8 +48,20 @@ class Cxcli < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/xavidop/dialogflow-cx-cli/releases/download/v1.30.0/cxcli_Linux_x86_64.tar.gz"
-      sha256 "e01517190b21f2e044737ccf9276f5a47b945609f27f2db79435c027167472a8"
+      url "https://github.com/xavidop/dialogflow-cx-cli/releases/download/v1.31.0/cxcli_Linux_x86_64.tar.gz"
+      sha256 "d6dfcf7453a713c78aaaa1eae482f1ad186a211ce56869f1f8622aab363d4aaa"
+
+      def install
+        bin.install "cxcli"
+        bash_completion.install "completions/cxcli.bash" => "cxcli"
+        zsh_completion.install "completions/cxcli.zsh" => "_cxcli"
+        fish_completion.install "completions/cxcli.fish"
+        man1.install "manpages/cxcli.1.gz"
+      end
+    end
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/xavidop/dialogflow-cx-cli/releases/download/v1.31.0/cxcli_Linux_armv7.tar.gz"
+      sha256 "27f84c744d94dda2029459ebcf2bfb146d9e5c8c314e1554dd824feed2b6b694"
 
       def install
         bin.install "cxcli"
