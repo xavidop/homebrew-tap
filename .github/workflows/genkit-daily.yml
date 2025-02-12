@@ -1,0 +1,74 @@
+name: Update Genkit Formula
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Runs daily at 00:00 UTC
+  workflow_dispatch:  # Allows manual triggering
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update-formula:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout tap repository
+        uses: actions/checkout@v4
+
+      - name: Check for new Genkit release
+        id: check_release
+        run: |
+          latest_release=$(curl -s https://api.github.com/repos/firebase/genkit/releases/latest | jq -r .tag_name)
+          echo "latest_release=$latest_release" >> $GITHUB_OUTPUT
+
+      - name: Get npm package info
+        id: npm_info
+        run: |
+          npm_info=$(npm view genkit-cli --json)
+          version=$(echo "$npm_info" | jq -r .version)
+          tarball=$(echo "$npm_info" | jq -r .dist.tarball)
+          echo "version=$version" >> $GITHUB_OUTPUT
+          echo "tarball=$tarball" >> $GITHUB_OUTPUT
+
+      - name: Update formula
+        if: steps.check_release.outputs.latest_release != steps.npm_info.outputs.version
+        run: |
+          formula_path="Formula/genkit.rb"
+          sha256=$(curl -sL ${{ steps.npm_info.outputs.tarball }} | shasum -a 256 | cut -d ' ' -f 1)
+          cat > $formula_path << EOL
+          require "language/node"
+
+          class Genkit < Formula
+            desc "Firebase Genkit CLI"
+            homepage "https://github.com/firebase/genkit"
+            url "${{ steps.npm_info.outputs.tarball }}"
+            sha256 "$sha256"
+            version "${{ steps.npm_info.outputs.version }}"
+
+            depends_on "node"
+
+            def install
+              system "npm", "install", *Language::Node.std_npm_install_args(libexec)
+              bin.install_symlink Dir["#{libexec}/bin/*"]
+            end
+
+            test do
+              assert_match "genkit", shell_output("#{bin}/genkit --help")
+            end
+          end
+          EOL
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "Update Genkit formula to ${{ steps.npm_info.outputs.version }}"
+          title: "Update Genkit formula to ${{ steps.npm_info.outputs.version }}"
+          body: |
+            This PR updates the Genkit formula to version ${{ steps.npm_info.outputs.version }}.
+            
+            New release: ${{ steps.check_release.outputs.latest_release }}
+          branch: update-genkit-formula
+          delete-branch: true
+          base: main
