@@ -17,7 +17,7 @@ class Genkit < Formula
   def uninstall
     # Remove symlinks
     rm Dir["#{bin}/genkit"]
-    
+
     # Remove the package directory
     rm_rf libexec
   end
