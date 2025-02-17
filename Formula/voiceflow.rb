@@ -5,12 +5,12 @@
 class Voiceflow < Formula
   desc "The CLI for your Voiceflow projects"
   homepage "https://voiceflow.xavidop.me"
-  version "1.13.1"
+  version "1.14.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/xavidop/voiceflow-cli/releases/download/v1.13.1/voiceflow_Darwin_x86_64.tar.gz"
-      sha256 "71d92fd994a3269ac88cf70799ca8438b38da2f257bd9c6d63bac617c2396f06"
+      url "https://github.com/xavidop/voiceflow-cli/releases/download/v1.14.0/voiceflow_Darwin_x86_64.tar.gz"
+      sha256 "6c9353d04d6e5d65a52d0109ef4dd8ac50f0be286dd1c4b0c7b26bebd309acab"
 
       def install
         bin.install "voiceflow"
@@ -21,8 +21,8 @@ class Voiceflow < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/xavidop/voiceflow-cli/releases/download/v1.13.1/voiceflow_Darwin_arm64.tar.gz"
-      sha256 "48fcf20fd99d18dd9fb8e951f1cbfaa8af3a39dadb2d04614de0637f3d922db5"
+      url "https://github.com/xavidop/voiceflow-cli/releases/download/v1.14.0/voiceflow_Darwin_arm64.tar.gz"
+      sha256 "de54b48e62b6dd6fbfa6714146b753bdd94c5fa7c81a2f34eeacb605146cf8f8"
 
       def install
         bin.install "voiceflow"
@@ -37,8 +37,8 @@ class Voiceflow < Formula
   on_linux do
     if Hardware::CPU.intel?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/xavidop/voiceflow-cli/releases/download/v1.13.1/voiceflow_Linux_x86_64.tar.gz"
-        sha256 "61bc1131ba383fc7d0942d9f7b9ff8c75fd73f78e61a593a6ceee07a0248182a"
+        url "https://github.com/xavidop/voiceflow-cli/releases/download/v1.14.0/voiceflow_Linux_x86_64.tar.gz"
+        sha256 "ae2931a43598874968f39eb5a2991ef90886763a452b3cec672b8d0685fe4de2"
 
         def install
           bin.install "voiceflow"
@@ -51,8 +51,8 @@ class Voiceflow < Formula
     end
     if Hardware::CPU.arm?
       if !Hardware::CPU.is_64_bit?
-        url "https://github.com/xavidop/voiceflow-cli/releases/download/v1.13.1/voiceflow_Linux_armv7.tar.gz"
-        sha256 "52d5193ec887e0fc5d8e1076d57d890279bcf6864ddcd88899c95abd24464e62"
+        url "https://github.com/xavidop/voiceflow-cli/releases/download/v1.14.0/voiceflow_Linux_armv7.tar.gz"
+        sha256 "1368e90cd078fe8ff315f4de0a5f87fdb3091b7a0929446acc633d0c2eb4eb65"
 
         def install
           bin.install "voiceflow"
@@ -65,8 +65,8 @@ class Voiceflow < Formula
     end
     if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/xavidop/voiceflow-cli/releases/download/v1.13.1/voiceflow_Linux_arm64.tar.gz"
-        sha256 "57df9d2c0cef7101abfbfcdcca7601eb58720500cc85b3ebbeaa2eb104795bd9"
+        url "https://github.com/xavidop/voiceflow-cli/releases/download/v1.14.0/voiceflow_Linux_arm64.tar.gz"
+        sha256 "3c2468f6ab61e3130f2806f56ad96e38843c2873e9225563b1485aa880f2f48a"
 
         def install
           bin.install "voiceflow"
