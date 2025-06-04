@@ -5,12 +5,12 @@
 class Voiceflow < Formula
   desc "The CLI for your Voiceflow projects"
   homepage "https://voiceflow.xavidop.me"
-  version "1.15.0"
+  version "1.15.1"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/xavidop/voiceflow-cli/releases/download/v1.15.0/voiceflow_Darwin_x86_64.tar.gz"
-      sha256 "1b2e69736e417796fb899fe9a71c7cf6ff9f1103b48a89448a3314c98fe1dc1e"
+      url "https://github.com/xavidop/voiceflow-cli/releases/download/v1.15.1/voiceflow_Darwin_x86_64.tar.gz"
+      sha256 "588ceed526ea22479d36824840f03fb1b530756e3c3684ea8b3ca8c62e117204"
 
       def install
         bin.install "voiceflow"
@@ -21,8 +21,8 @@ class Voiceflow < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/xavidop/voiceflow-cli/releases/download/v1.15.0/voiceflow_Darwin_arm64.tar.gz"
-      sha256 "fcf65d9d0fb2ff5375684733c9bd38521df656f6a69d18d254625964621213ea"
+      url "https://github.com/xavidop/voiceflow-cli/releases/download/v1.15.1/voiceflow_Darwin_arm64.tar.gz"
+      sha256 "8ca81f13a794508141f560f8f30aeb02f4db582afd286f9b50d731217f65c833"
 
       def install
         bin.install "voiceflow"
@@ -35,46 +35,37 @@ class Voiceflow < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/xavidop/voiceflow-cli/releases/download/v1.15.0/voiceflow_Linux_x86_64.tar.gz"
-        sha256 "eaaed90078d4c2b10a48cd1e0e0bd4e375e4f6fe5950261b3d007026124b83f2"
-
-        def install
-          bin.install "voiceflow"
-          bash_completion.install "completions/voiceflow.bash" => "voiceflow"
-          zsh_completion.install "completions/voiceflow.zsh" => "_voiceflow"
-          fish_completion.install "completions/voiceflow.fish"
-          man1.install "manpages/voiceflow.1.gz"
-        end
+    if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
+      url "https://github.com/xavidop/voiceflow-cli/releases/download/v1.15.1/voiceflow_Linux_x86_64.tar.gz"
+      sha256 "b88845d1e9e799d00a329aa98b51c83c98009db0fe46c7d986499be771bd2669"
+      def install
+        bin.install "voiceflow"
+        bash_completion.install "completions/voiceflow.bash" => "voiceflow"
+        zsh_completion.install "completions/voiceflow.zsh" => "_voiceflow"
+        fish_completion.install "completions/voiceflow.fish"
+        man1.install "manpages/voiceflow.1.gz"
       end
     end
-    if Hardware::CPU.arm?
-      if !Hardware::CPU.is_64_bit?
-        url "https://github.com/xavidop/voiceflow-cli/releases/download/v1.15.0/voiceflow_Linux_armv7.tar.gz"
-        sha256 "66f097fedf1fcec3bb7e01f0412d820032db1102e5555caf3a56addf59ce78e9"
-
-        def install
-          bin.install "voiceflow"
-          bash_completion.install "completions/voiceflow.bash" => "voiceflow"
-          zsh_completion.install "completions/voiceflow.zsh" => "_voiceflow"
-          fish_completion.install "completions/voiceflow.fish"
-          man1.install "manpages/voiceflow.1.gz"
-        end
+    if Hardware::CPU.arm? and !Hardware::CPU.is_64_bit?
+      url "https://github.com/xavidop/voiceflow-cli/releases/download/v1.15.1/voiceflow_Linux_armv7.tar.gz"
+      sha256 "4bec17e7cc7ac176fe8103c0372aa47ea71f2692ae1447962741678333aeeedb"
+      def install
+        bin.install "voiceflow"
+        bash_completion.install "completions/voiceflow.bash" => "voiceflow"
+        zsh_completion.install "completions/voiceflow.zsh" => "_voiceflow"
+        fish_completion.install "completions/voiceflow.fish"
+        man1.install "manpages/voiceflow.1.gz"
       end
     end
-    if Hardware::CPU.arm?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/xavidop/voiceflow-cli/releases/download/v1.15.0/voiceflow_Linux_arm64.tar.gz"
-        sha256 "5a06d0b40b72bbf42e429d686d7ff8043b6ab84e4ace0d3907479cbf94d867f6"
-
-        def install
-          bin.install "voiceflow"
-          bash_completion.install "completions/voiceflow.bash" => "voiceflow"
-          zsh_completion.install "completions/voiceflow.zsh" => "_voiceflow"
-          fish_completion.install "completions/voiceflow.fish"
-          man1.install "manpages/voiceflow.1.gz"
-        end
+    if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
+      url "https://github.com/xavidop/voiceflow-cli/releases/download/v1.15.1/voiceflow_Linux_arm64.tar.gz"
+      sha256 "2d41a307a5cd78bbe1487eefb41fc0bf5f8b8ac2093c5d3ab730ef0278fcdc0f"
+      def install
+        bin.install "voiceflow"
+        bash_completion.install "completions/voiceflow.bash" => "voiceflow"
+        zsh_completion.install "completions/voiceflow.zsh" => "_voiceflow"
+        fish_completion.install "completions/voiceflow.fish"
+        man1.install "manpages/voiceflow.1.gz"
       end
     end
   end
