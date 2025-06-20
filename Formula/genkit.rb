@@ -3,9 +3,9 @@ require "language/node"
 class Genkit < Formula
   desc "Firebase Genkit CLI"
   homepage "https://github.com/firebase/genkit"
-  url "https://registry.npmjs.org/genkit-cli/-/genkit-cli-1.12.0.tgz"
-  sha256 "f6e32ee25ccc02c47ab6a44ea1d3bd9c927ee09c8decb9c163b4a9a273ae8216"
-  version "1.12.0"
+  url "https://registry.npmjs.org/genkit-cli/-/genkit-cli-1.13.0.tgz"
+  sha256 "7cd60e47a822a32ee5dc3b3bde17bc27342f314ab5f88dfcfefed72aa062c61e"
+  version "1.13.0"
 
   depends_on "node"
 
