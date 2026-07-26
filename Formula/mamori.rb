@@ -5,21 +5,21 @@
 class Mamori < Formula
   desc "CLI for the mamori typed config and secrets library: explain, schema, policy, doctor, status"
   homepage "https://mamorigo.dev"
-  version "1.2.2"
+  version "1.2.3"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/xavidop/mamori/releases/download/v1.2.2/mamori_1.2.2_darwin_amd64.tar.gz"
-      sha256 "893ab556028338e18ce8cd4296935c078512f34eb96bef3a9906c08acd1bc930"
+      url "https://github.com/xavidop/mamori/releases/download/v1.2.3/mamori_1.2.3_darwin_amd64.tar.gz"
+      sha256 "b13e5c98e4ac60529c83e897abdd2c1b54ec3ed895ab1452e340c6efd27f5a8b"
 
       define_method(:install) do
         bin.install "mamori"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/xavidop/mamori/releases/download/v1.2.2/mamori_1.2.2_darwin_arm64.tar.gz"
-      sha256 "3a15a57a6097a812e72a4e085da20c6fa612ff4dbe23c6b26bcbb27cb2c0a427"
+      url "https://github.com/xavidop/mamori/releases/download/v1.2.3/mamori_1.2.3_darwin_arm64.tar.gz"
+      sha256 "3e467f681d1b52bbde3c8cc386eed3d66fd2894e805525bbd26208ebcfc28c3d"
 
       define_method(:install) do
         bin.install "mamori"
@@ -29,15 +29,15 @@ class Mamori < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/xavidop/mamori/releases/download/v1.2.2/mamori_1.2.2_linux_amd64.tar.gz"
-      sha256 "c633faf2429af2985e182dbf70c3abeba6862fa70a8e722a5029fcce425af3f8"
+      url "https://github.com/xavidop/mamori/releases/download/v1.2.3/mamori_1.2.3_linux_amd64.tar.gz"
+      sha256 "6a5973201943f878ffeb175170fadb0d43d7d1dffcfcbdea427ec58a90d84226"
       define_method(:install) do
         bin.install "mamori"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/xavidop/mamori/releases/download/v1.2.2/mamori_1.2.2_linux_arm64.tar.gz"
-      sha256 "fee4105e9d3909119fe4a18780b196ef4b701f169a25ee1f7ad0356a3e4fec93"
+      url "https://github.com/xavidop/mamori/releases/download/v1.2.3/mamori_1.2.3_linux_arm64.tar.gz"
+      sha256 "a7a6c940a2e370207075a5e6d689a72391a5bb891ad3f46e7ad116709690de2d"
       define_method(:install) do
         bin.install "mamori"
       end
