@@ -33,7 +33,7 @@ cask "diamond" do
 
   binary "diamond"
 
-  postflight_steps do
+  postflight do
     if OS.mac?
       system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/diamond"]
     end
