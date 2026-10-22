@@ -33,9 +33,12 @@ cask "diamond" do
 
   binary "diamond"
 
-  postflight do
-    if OS.mac?
-      system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/diamond"]
+  postflight_steps do
+    on_macos do
+      run "/usr/bin/xattr",
+          args:           ["-dr", "com.apple.quarantine", "{{staged_path}}/diamond"],
+          writable_paths: ["diamond"],
+          writable_base:  :staged_path
     end
   end
 
