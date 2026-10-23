@@ -9,25 +9,25 @@ cask "tobira" do
     end
   end
 
-  version "1.2.0"
+  version "1.3.0"
 
   on_macos do
     on_arm do
-      sha256 "f0b85e2b65051ca4de214e09cedb12902b4329726ed079d1f74247c755602f99"
+      sha256 "e7ffaa67da7b73140dcf279eac3b28ae0fc60755405910353dec9a2dc0521cdd"
       url "https://github.com/xavidop/tobira/releases/download/v#{version}/tobira_#{version}_darwin_arm64.tar.gz"
     end
     on_intel do
-      sha256 "04287d4a74e85620c2838cbb59b5e5d5a7bc5c68660386a2b637267a3244fc04"
+      sha256 "ed6f65dffacc4cf92d37c1e970e9a385dd4c1d0f14bb42076d0bbbb24b418087"
       url "https://github.com/xavidop/tobira/releases/download/v#{version}/tobira_#{version}_darwin_amd64.tar.gz"
     end
   end
   on_linux do
     on_arm do
-      sha256 "ae143ebc3d548aabcc7a54810ec20ec3653a606cd5a3cf4fdb6d3058b534a719"
+      sha256 "fb6647b07377aae99cdf7983d9e0540630ea60fb8167a037072e94062251ccd6"
       url "https://github.com/xavidop/tobira/releases/download/v#{version}/tobira_#{version}_linux_arm64.tar.gz"
     end
     on_intel do
-      sha256 "84e7fe2b0903cba5cff232191f55c4f6798c1b113ebecb685e8812c7b2285446"
+      sha256 "6c0a75552c370823e951467969471b45a52e8290bdb52a8bba4c089988d195a4"
       url "https://github.com/xavidop/tobira/releases/download/v#{version}/tobira_#{version}_linux_amd64.tar.gz"
     end
   end
