@@ -9,25 +9,25 @@ cask "tamesu" do
     end
   end
 
-  version "1.4.0"
+  version "1.5.0"
 
   on_macos do
     on_arm do
-      sha256 "9e4516b4da3a55d9f7d044d9c9932dc83559d264becfe787b99aaf07623eade7"
+      sha256 "5db3e67ba118822f4d20ed12c0e15d8ab20e23c4ffed64a952caa25c160ea82f"
       url "https://github.com/xavidop/tamesu/releases/download/v#{version}/tamesu-lite_#{version}_darwin_arm64.tar.gz"
     end
     on_intel do
-      sha256 "bccb3b4b59569b6df6d47279660c35c52b3cbd7a81b2d6b7fdafb7af2995a9bb"
+      sha256 "3398d448fc24bedb87b4ade9545d7dbe110d9c32596ee59af7a3d354f4c4652a"
       url "https://github.com/xavidop/tamesu/releases/download/v#{version}/tamesu-lite_#{version}_darwin_amd64.tar.gz"
     end
   end
   on_linux do
     on_arm do
-      sha256 "83303f41e19b3b06fe03935a929a38625a0c88cdb0f65c72753acc06654b99ca"
+      sha256 "0009a55631a2c73e927072a99d53ff5f284a82958aeca403cbf647f9b99057a8"
       url "https://github.com/xavidop/tamesu/releases/download/v#{version}/tamesu-lite_#{version}_linux_arm64.tar.gz"
     end
     on_intel do
-      sha256 "bd4db0f14329d7212880ec2edd311e864e444688ab505c3db0b6dfdc08ad86a9"
+      sha256 "35b4c1fa4022ecd846c674a16eb35fb5de5600b94121d579f99f9b54c35f0e5e"
       url "https://github.com/xavidop/tamesu/releases/download/v#{version}/tamesu-lite_#{version}_linux_amd64.tar.gz"
     end
   end
