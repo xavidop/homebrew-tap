@@ -9,25 +9,25 @@ cask "diamond" do
     end
   end
 
-  version "1.19.0"
+  version "1.20.0"
 
   on_macos do
     on_arm do
-      sha256 "a054c12e9073eefde030c37ef967e9cacb75d008572ca511538ede46cc577a93"
+      sha256 "7c97e3751fa0406501d158f14cf020d1d70d7418ca860e188f47624437a250aa"
       url "https://github.com/xavidop/diamond/releases/download/v#{version}/diamond_#{version}_darwin_arm64.tar.gz"
     end
     on_intel do
-      sha256 "2d1df38fdef9094ccb9088d760afcff21476d98b43c2e14a4e8ca12cf3a35c3e"
+      sha256 "36476afd831af7ff821040da5bb49d42c970778a33bff92e6020db84d55cc7c1"
       url "https://github.com/xavidop/diamond/releases/download/v#{version}/diamond_#{version}_darwin_amd64.tar.gz"
     end
   end
   on_linux do
     on_arm do
-      sha256 "873af51dec169532d8af1608c16d6513e7dfad381f1fe3341c39157879597f77"
+      sha256 "9d4f97c6e50fc25b463ac46c161f63e5e3998472283d2335ceef86aa3334f298"
       url "https://github.com/xavidop/diamond/releases/download/v#{version}/diamond_#{version}_linux_arm64.tar.gz"
     end
     on_intel do
-      sha256 "260a6d1dceb5fb4864abbe7a232229e4c116c67d0d636a50287eeb5ab8bd3dea"
+      sha256 "fb7691524aa70b7a8e9613f9f3afd8525fc4522034ecc083c722a7c2f0f93797"
       url "https://github.com/xavidop/diamond/releases/download/v#{version}/diamond_#{version}_linux_amd64.tar.gz"
     end
   end
