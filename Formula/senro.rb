@@ -5,21 +5,21 @@
 class Senro < Formula
   desc "CLI for the senro pipeline engine: build and run a pipeline, attach to a live or finished run, and follow it from the terminal"
   homepage "https://github.com/xavidop/senro"
-  version "1.5.2"
+  version "1.5.3"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/xavidop/senro/releases/download/v1.5.2/senro_1.5.2_darwin_amd64.tar.gz"
-      sha256 "be22180d7a966d3395972ca30d9096e9e0942a11f0357eebdf9f2afc9d65d87c"
+      url "https://github.com/xavidop/senro/releases/download/v1.5.3/senro_1.5.3_darwin_amd64.tar.gz"
+      sha256 "c006d77c159ae60071242f3fd252414b3f1315ffa4af066101fd58ac0b24efa8"
 
       define_method(:install) do
         bin.install "senro"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/xavidop/senro/releases/download/v1.5.2/senro_1.5.2_darwin_arm64.tar.gz"
-      sha256 "e4840da7df17ce2df3043d2489be846bac9ecdaaef1aee15fcd148e021dcbc1e"
+      url "https://github.com/xavidop/senro/releases/download/v1.5.3/senro_1.5.3_darwin_arm64.tar.gz"
+      sha256 "875c740500e92371fda44cdc3361f3adbf9583fd4f103d0ca356d3b6f67f023b"
 
       define_method(:install) do
         bin.install "senro"
@@ -29,15 +29,15 @@ class Senro < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/xavidop/senro/releases/download/v1.5.2/senro_1.5.2_linux_amd64.tar.gz"
-      sha256 "330d9134a16ce19d201f37e5052cd88fccb07daa962020b011a1e07e2abfe6fb"
+      url "https://github.com/xavidop/senro/releases/download/v1.5.3/senro_1.5.3_linux_amd64.tar.gz"
+      sha256 "790dd2ddb1bc7cfd8d63dc89c11c47dbab4ab4572f8e6919d63a1d796c5e4d56"
       define_method(:install) do
         bin.install "senro"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/xavidop/senro/releases/download/v1.5.2/senro_1.5.2_linux_arm64.tar.gz"
-      sha256 "ca80f7f1d2a4cabcfba17910a714ef1b0fedbfe76518e42b7f7fa518d969326a"
+      url "https://github.com/xavidop/senro/releases/download/v1.5.3/senro_1.5.3_linux_arm64.tar.gz"
+      sha256 "54407a1d8807240b76221470957cf447c82658dce4fc7b13d7f07ffca20193bb"
       define_method(:install) do
         bin.install "senro"
       end
