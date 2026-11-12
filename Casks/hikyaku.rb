@@ -9,25 +9,25 @@ cask "hikyaku" do
     end
   end
 
-  version "1.4.0"
+  version "1.5.0"
 
   on_macos do
     on_arm do
-      sha256 "78ae76f62913d22946edb81aac45d39b4bbabaa3e8095fa7ce492ba449237d18"
+      sha256 "e0a3e13bc7708b1b2640c95166619835fe5dafe9bad9d948c75c4b4fbee9f728"
       url "https://github.com/xavidop/hikyaku/releases/download/v#{version}/hikyaku_#{version}_darwin_arm64.tar.gz"
     end
     on_intel do
-      sha256 "6e673f5c630f3fd733d4a11c10b10f8ea3efb9a89284578984af3833674fabd8"
+      sha256 "2fb47ba9b548fda25d625faddfdeae0fc7a9f3deeba269cd4347bc81c0d26a30"
       url "https://github.com/xavidop/hikyaku/releases/download/v#{version}/hikyaku_#{version}_darwin_amd64.tar.gz"
     end
   end
   on_linux do
     on_arm do
-      sha256 "b51736a9e3a5debb19008ef33f7afe108e61d23fe45ce9959ea803aa4c12cbfb"
+      sha256 "40bbac1c18c0abe41e52887722e5b61e54fce864730a9ba6a2babbc5db7d6d7f"
       url "https://github.com/xavidop/hikyaku/releases/download/v#{version}/hikyaku_#{version}_linux_arm64.tar.gz"
     end
     on_intel do
-      sha256 "09708c0b0a528112d80b6201bb56c085c8cc5fe17e00880963cba3958b377a5a"
+      sha256 "a1c2d88f719bf527772dffff1ab673a876af42f6c8111395f5884329632beebb"
       url "https://github.com/xavidop/hikyaku/releases/download/v#{version}/hikyaku_#{version}_linux_amd64.tar.gz"
     end
   end
